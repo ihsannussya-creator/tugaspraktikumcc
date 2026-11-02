@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ihxsann.mov Portfolio</title>
+<style>
+  :root {
+    --bg: #f6f4ff;
+    --surface: #ffffff;
+    --ink: #17154a;
+    --muted: #5d5a85;
+    --brand: #4f3df0;
+    --brand-ink: #ffffff;
+    --accent: #ff6b57;
+    --line: #dcd8f5;
+    --hero: #17154a;
+    --hero-ink: #f6f4ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0e2c;
+      --surface: #1a1946;
+      --ink: #f1efff;
+      --muted: #a7a4d1;
+      --brand: #8b7dff;
+      --brand-ink: #0f0e2c;
+      --accent: #ff8a78;
+      --line: #2e2c66;
+      --hero: #0a0920;
+      --hero-ink: #f1efff;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { width: min(1080px, 100% - 40px); margin-inline: auto; }
+  section { padding: 72px 0; }
+  h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 14px; }
+  .lead { color: var(--muted); max-width: 60ch; margin-bottom: 36px; }
+  .alt { background: var(--surface); }
+  .btn { display: inline-block; background: var(--accent); color: #1a0f0d; font-weight: 700; padding: 14px 26px; border-radius: 999px; text-decoration: none; transition: transform .15s; }
+  .btn.ghost { background: transparent; color: inherit; border: 2px solid currentColor; padding: 12px 24px; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  nav { background: var(--hero); color: var(--hero-ink); }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; gap: 12px; }
+  .logo { font-weight: 800; font-size: 1.15rem; text-decoration: none; }
+  .links { display: flex; gap: 10px; }
+  nav a.mini { text-decoration: none; font-weight: 600; border: 2px solid var(--hero-ink); padding: 6px 16px; border-radius: 999px; font-size: .9rem; }
+  nav a.mini.fill { background: var(--accent); border-color: var(--accent); color: #1a0f0d; }
+
+  .hero { background: var(--hero); color: var(--hero-ink); padding: 80px 0 96px; overflow: hidden; position: relative; }
+  .hero h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); max-width: 14ch; margin-bottom: 20px; }
+  .hero p { max-width: 56ch; color: #cfcbf5; margin-bottom: 32px; font-size: 1.1rem; }
+  .hero .wrap { position: relative; z-index: 1; }
+  .orb { position: absolute; right: -80px; top: 40px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--brand), transparent 70%); opacity: .55; animation: melayang 7s ease-in-out infinite; }
+  .orb.dua { right: 160px; top: 260px; width: 160px; height: 160px; background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%); animation-delay: -3s; }
+  @keyframes melayang { 50% { transform: translateY(-26px); } }
+  @media (prefers-reduced-motion: reduce) { .orb { animation: none; } html { scroll-behavior: auto; } }
+
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+  .alt .box { background: var(--bg); }
+  .box h3 { margin-bottom: 8px; font-size: 1.15rem; }
+  .box p { color: var(--muted); }
+  .tag { display: inline-block; background: var(--brand); color: var(--brand-ink); font-size: .8rem; font-weight: 700; padding: 3px 12px; border-radius: 999px; margin-bottom: 12px; }
+
+  .work { border-radius: 14px; overflow: hidden; background: var(--bg); border: 1px solid var(--line); }
+  .thumb { aspect-ratio: 16 / 10; display: grid; place-items: center; color: #fff; font-size: 2.4rem; }
+  .t1 { background: linear-gradient(135deg, #4f3df0, #ff6b57); }
+  .t2 { background: linear-gradient(135deg, #0f766e, #4f3df0); }
+  .t3 { background: linear-gradient(135deg, #ff6b57, #f2b134); }
+  .t4 { background: linear-gradient(135deg, #17154a, #8b7dff); }
+  .work .info { padding: 18px 20px; }
+  .work h3 { font-size: 1.1rem; margin-bottom: 4px; }
+  .work small { color: var(--accent); font-weight: 700; }
+  .work p { color: var(--muted); margin-top: 6px; }
+
+  .mentor { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .foto { width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--accent)); display: grid; place-items: center; font-size: 3rem; font-weight: 800; color: #fff; flex-shrink: 0; }
+
+  .contact { max-width: 520px; margin-inline: auto; background: var(--bg); border: 3px solid var(--brand); border-radius: 20px; padding: 36px; text-align: center; }
+  .contact p { color: var(--muted); margin-bottom: 22px; }
+  .contact .btns { justify-content: center; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; }
+  summary { cursor: pointer; font-weight: 700; }
+  details p { margin-top: 10px; color: var(--muted); }
+
+  footer { background: var(--hero); color: #a7a4d1; text-align: center; padding: 28px 0; font-size: .9rem; }
+  @media (max-width: 560px) { .orb { opacity: .3; } nav a.mini { padding: 6px 12px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">ihxsann.mov</a>
+    <div class="links">
+      <a class="mini" href="#works">Works</a>
+      <a class="mini fill" href="#contact">Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="orb"></div><div class="orb dua"></div>
+  <div class="wrap">
+    <h1>ihxsann.mov Portfolio</h1>
+    <p>A collection of video and motion graphics work, made with care for detail, good rhythm, and a clear story. Browse the latest projects, see how I work, and get in touch if you'd like to collaborate.</p>
+    <div class="btns">
+      <a class="btn" href="#works">Works</a>
+      <a class="btn ghost" href="#contact">Contact us</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>What I can do</h2>
+    <p class="lead">From a rough idea to the final file, everything is handled in one place.</p>
+    <div class="grid">
+      <div class="box"><span class="tag">Service 1</span><h3>Video editing</h3><p>Cutting, pacing, color grading, and sound sync for social media content and brands.</p></div>
+      <div class="box"><span class="tag">Service 2</span><h3>Motion graphics</h3><p>Logo, text, and visual animations that make your message easier to understand.</p></div>
+      <div class="box"><span class="tag">Service 3</span><h3>Short-form content</h3><p>Reels, TikTok, and YouTube Shorts made to hold attention until the very last second.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="works" class="alt">
+  <div class="wrap">
+    <h2>Works</h2>
+    <p class="lead">A few selected projects. Replace the titles and descriptions with your own work.</p>
+    <div class="grid">
+      <article class="work"><div class="thumb t1" aria-hidden="true">▶</div><div class="info"><small>Logo Animation</small><h3>Project Title 1</h3><p>A short logo animation for the intro of a local brand's video.</p></div></article>
+      <article class="work"><div class="thumb t2" aria-hidden="true">▶</div><div class="info"><small>Explainer Video</small><h3>Project Title 2</h3><p>A one-minute explainer video with animated illustrations.</p></div></article>
+      <article class="work"><div class="thumb t3" aria-hidden="true">▶</div><div class="info"><small>Short Content</small><h3>Project Title 3</h3><p>A series of Reels with fast transitions and music-synced edits.</p></div></article>
+      <article class="work"><div class="thumb t4" aria-hidden="true">▶</div><div class="info"><small>Kinetic Typography</small><h3>Project Title 4</h3><p>Moving text animation for lyrics and quotes.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="lead">A simple flow so the result matches what you have in mind.</p>
+    <div class="grid">
+      <div class="box"><h3>Brief</h3><p>Tell me your goal, duration, and any style references you like.</p></div>
+      <div class="box"><h3>Draft</h3><p>You receive a first draft to review and comment on.</p></div>
+      <div class="box"><h3>Revisions</h3><p>Adjustments based on your feedback until it feels right.</p></div>
+      <div class="box"><h3>Final</h3><p>The final file is delivered in a format that's ready to upload.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap mentor">
+    <div class="foto" aria-hidden="true">I</div>
+    <div style="flex:1; min-width:260px;">
+      <h2>About</h2>
+      <h3 style="margin-bottom:10px;">ihxsann.mov</h3>
+      <p class="lead" style="margin-bottom:0;">A video and motion creator who loves experimenting with rhythm, color, and movement. Every project is made with attention to the small details that often get overlooked. Edit this description with your own story and experience.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What people say</h2>
+    <p class="lead">Sample testimonials. Replace them with real comments from clients or friends.</p>
+    <div class="grid">
+      <div class="box"><p>“The result was clean and just as I imagined, and revisions were handled quickly.”</p><p style="margin-top:12px;"><b style="color:var(--ink)">Sinta</b>, Brand Owner</p></div>
+      <div class="box"><p>“The transitions are so smooth, my content feels far more professional.”</p><p style="margin-top:12px;"><b style="color:var(--ink)">Dimas</b>, Content Creator</p></div>
+      <div class="box"><p>“Easy to communicate with, and deadlines were always met.”</p><p style="margin-top:12px;"><b style="color:var(--ink)">Rara</b>, Marketing Lead</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2 style="text-align:center;">Let's talk</h2>
+    <div class="contact">
+      <p>Have a project in mind or just want to ask something? Send a message, I usually reply within a day.</p>
+      <div class="btns">
+        <a class="btn" href="mailto:halo@ihxsann.mov">Contact us</a>
+        <a class="btn ghost" href="#works">Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Frequently asked questions</h2>
+    <details><summary>What kinds of projects do you take on?</summary><p>Video editing, motion graphics, and short-form content for social media and brands.</p></details>
+    <details><summary>How long does a project take?</summary><p>It depends on the length and complexity. I'll give a time estimate once I receive your brief.</p></details>
+    <details><summary>Are revisions included?</summary><p>Yes. The number of revisions is agreed on at the start so the process is clear for both sides.</p></details>
+    <details><summary>How do I place an order?</summary><p>Click the Contact us button, send a short brief, and we'll continue from there.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© ihxsann.mov. Made for the Cloud Computing Practicum, Telkom University Jakarta.</div>
+</footer>
+
+</body>
+</html>
